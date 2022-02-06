@@ -1,0 +1,107 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/Counter.gd" type="Script" id=1]
+[ext_resource path="res://assets/font/Flappy-Bird.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/sprites/score_panel.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/InfoBoard.gd" type="Script" id=5]
+
+[sub_resource type="Animation" id=2]
+resource_name = "hide"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 26, 550 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "show"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 26, 550 ), Vector2( 24, 142 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "on_board_shown"
+} ]
+}
+
+[node name="UI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Counter" type="Timer" parent="."]
+autostart = true
+
+[node name="Score" type="Label" parent="."]
+anchor_right = 1.0
+margin_bottom = 83.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+custom_fonts/font = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InfoBoard" type="TextureRect" parent="."]
+margin_left = 26.0
+margin_top = 550.0
+margin_right = 264.0
+margin_bottom = 676.0
+texture = ExtResource( 3 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrentScore" type="Label" parent="InfoBoard"]
+margin_left = 165.0
+margin_top = 34.0
+margin_right = 214.0
+margin_bottom = 57.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+align = 1
+valign = 1
+
+[node name="Record" type="Label" parent="InfoBoard"]
+margin_left = 165.0
+margin_top = 77.0
+margin_right = 222.0
+margin_bottom = 99.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+align = 1
+valign = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="InfoBoard"]
+anims/hide = SubResource( 2 )
+anims/show = SubResource( 3 )

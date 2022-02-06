@@ -1,0 +1,45 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Reference",
+"class": "FileHelper",
+"language": "GDScript",
+"path": "res://Scripts/FileHelper.gd"
+} ]
+_global_script_class_icons={
+"FileHelper": ""
+}
+
+[application]
+
+config/name="Godot Flappy Bird"
+run/main_scene="res://Application.tscn"
+config/use_custom_user_dir=true
+config/icon="res://icon.png"
+
+[autoload]
+
+AudioManager="*res://Managers/AudioManager.tscn"
+GameData="*res://Scripts/GameData.gd"
+
+[display]
+
+window/size/width=288
+window/size/height=512
+window/size/resizable=false
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
