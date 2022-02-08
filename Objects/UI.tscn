@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Counter.gd" type="Script" id=1]
 [ext_resource path="res://assets/font/Flappy-Bird.tres" type="DynamicFont" id=2]
 [ext_resource path="res://assets/sprites/score_panel.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/gameover.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/InfoBoard.gd" type="Script" id=5]
 
 [sub_resource type="Animation" id=2]
@@ -74,10 +75,10 @@ __meta__ = {
 }
 
 [node name="InfoBoard" type="TextureRect" parent="."]
-margin_left = 26.0
-margin_top = 550.0
-margin_right = 264.0
-margin_bottom = 676.0
+margin_left = 27.0
+margin_top = 556.0
+margin_right = 265.0
+margin_bottom = 682.0
 texture = ExtResource( 3 )
 script = ExtResource( 5 )
 __meta__ = {
@@ -89,7 +90,7 @@ margin_left = 165.0
 margin_top = 34.0
 margin_right = 214.0
 margin_bottom = 57.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0.988235, 0.627451, 0.282353, 1 )
 align = 1
 valign = 1
 
@@ -98,10 +99,25 @@ margin_left = 165.0
 margin_top = 77.0
 margin_right = 222.0
 margin_bottom = 99.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0.988235, 0.627451, 0.282353, 1 )
 align = 1
 valign = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="InfoBoard"]
 anims/hide = SubResource( 2 )
 anims/show = SubResource( 3 )
+
+[node name="Gameover" type="TextureRect" parent="InfoBoard"]
+margin_left = 21.0
+margin_top = -41.0
+margin_right = 213.0
+margin_bottom = 1.0
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="InfoBoard"]
+margin_left = 33.0
+margin_top = 117.0
+margin_right = 204.0
+margin_bottom = 131.0
+custom_colors/font_color = Color( 0.870588, 1, 1, 1 )
+text = "Press `Space` to try again."
