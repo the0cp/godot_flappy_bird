@@ -78,7 +78,6 @@ one_way_collision_margin = 0.0
 scale = Vector2( 1.2, 1.2 )
 frames = SubResource( 1 )
 animation = "fly"
-frame = 2
 playing = true
 
 [node name="Walls" type="Node2D" parent="."]
