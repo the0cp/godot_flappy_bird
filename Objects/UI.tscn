@@ -121,3 +121,12 @@ margin_right = 204.0
 margin_bottom = 131.0
 custom_colors/font_color = Color( 0.870588, 1, 1, 1 )
 text = "Press `Space` to try again."
+
+[node name="Medal" type="TextureRect" parent="InfoBoard"]
+margin_left = 34.0
+margin_top = 45.0
+margin_right = 74.0
+margin_bottom = 85.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
