@@ -9,7 +9,7 @@ func on_body_exited(_body):
 		AudioManager.play("point")
 		GameData.score += 1
 		get_tree().call_group("SCORE","on_score_updated",GameData.score)
-		print("scored!!")
+		#print("scored!!")
 
 func on_game_over():
 	disconnect("body_exited", self, "on_body_exited")

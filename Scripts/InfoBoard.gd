@@ -8,7 +8,7 @@ func _ready():
 	add_to_group("GAME_STATE")
 	set_process(false)
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("ui_select"):
 		get_tree().call_group("GAME_STATE", "on_game_start")
 
