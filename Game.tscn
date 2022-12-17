@@ -23,8 +23,8 @@ shader = ExtResource( 7 )
 shader_param/speed = 0.3
 
 [sub_resource type="CapsuleShape2D" id=6]
-radius = 14.9274
-height = 10.5009
+radius = 11.8839
+height = 4.22672
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
